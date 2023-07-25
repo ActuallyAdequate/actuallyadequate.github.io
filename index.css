@@ -9,6 +9,8 @@
     --accent: #d22d6f;
     --accent-focus: #e481a9;
 
+    --text-light: #e8e3e5;
+
     @media screen and (prefers-color-scheme: dark) {
         --text: #e8e3e5;
         --neutral: grey;
@@ -40,18 +42,30 @@ nav img {width: 2em;}
 a {color: var(--accent)}
 a:hover {color: var(--accent-focus)}
 
-#intro {
-    background-color: var(--primary);
-}
-#highlights {
-    background-color: var(--primary);
-}
 
 .social {
-    background-color: var(--secondary);
+    background-color: var(--primary);
 }
 
 .social-img {
     width: 4em;
     margin: 1em;
+}
+
+#highlights {
+    margin-top: 10em;
+    background-color: var(--primary);
+    color: var(--text-light);
+    position: relative;
+}
+
+#highlights h2 {
+    position: absolute;
+    padding-left:20%;
+    left: -10%;
+    content: "What's Happening";
+    background-color: var(--primary);
+    width: 250%;
+    height: 100%;
+    transform: rotate(7deg);
 }
