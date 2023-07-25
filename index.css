@@ -1,6 +1,13 @@
 :root {
-    color-scheme: light;
 
+
+    --text: #050505;
+    --background: #fafafa;
+    --neutral: grey;
+    --primary: #34413c;
+    --secondary: #e3e5e8;
+    --accent: #d22d6f;
+    --accent-focus: #e481a9;
     
 
     --text-light: #e8e3e5;
@@ -8,32 +15,17 @@
     
 }
 
-@media (prefers-color-scheme: light) {
-    :root {
-        --text: #050505;
-    --background: #fafafa;
+html[data-theme="dark"] {
+    --text: #e8e3e5;
     --neutral: grey;
+    --background: #191416;
     --primary: #34413c;
-    --secondary: #e3e5e8;
-    --accent: #d22d6f;
-    --accent-focus: #e481a9;
-    }
-   
+    --secondary: #22252a;
+    --accent: #e481a9;
+    --accent-focus: #d22d6f;
 }
-
-
-@media screen and (prefers-color-scheme: dark) {
-    :root {
-        --text: #e8e3e5;
-        --neutral: grey;
-        --background: #191416;
-        --primary: #34413c;
-        --secondary: #22252a;
-        --accent: #e481a9;
-        --accent-focus: #d22d6f;
-    }
    
-}
+
 
 body {
     background-color: var(--background);
@@ -84,3 +76,64 @@ a:hover {color: var(--accent-focus)}
     transform: rotate(7deg);
     padding-bottom: 3em;
 }
+
+
+/*Simple css to style it like a toggle switch*/
+.theme-switch-wrapper {
+    display: flex;
+    align-items: center;
+  
+    em {
+      margin-left: 10px;
+      font-size: 1rem;
+    }
+  }
+  .theme-switch {
+    display: inline-block;
+    height: 34px;
+    position: relative;
+    width: 60px;
+  }
+  
+  .theme-switch input {
+    display:none;
+  }
+  
+  .slider {
+    background-color: var(--background);
+    bottom: 0;
+    cursor: pointer;
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+    transition: .4s;
+  }
+  
+  .slider:before {
+    background-color: var(--text);
+    bottom: 4px;
+    content: "";
+    height: 26px;
+    left: 4px;
+    position: absolute;
+    transition: .4s;
+    width: 26px;
+  }
+  
+  input:checked + .slider {
+    background-color: var(--background);
+  }
+  
+  input:checked + .slider:before {
+    transform: translateX(26px);
+  }
+  
+  .slider.round {
+    border-radius: 34px;
+  }
+  
+  .slider.round:before {
+    border-radius: 50%;
+  }
+  
