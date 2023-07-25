@@ -3,20 +3,55 @@
 
     --text: #050505;
     --background: #fafafa;
+    --neutral: grey;
     --primary: #34413c;
     --secondary: #e3e5e8;
     --accent: #d22d6f;
+    --accent-focus: #e481a9;
 
     @media screen and (prefers-color-scheme: dark) {
         --text: #e8e3e5;
+        --neutral: grey;
         --background: #191416;
         --primary: #34413c;
         --secondary: #22252a;
         --accent: #e481a9;
+        --accent-focus: #d22d6f;
     }
 }
 
 body {
     background-color: var(--background);
     color: var(--text);
+}
+
+.nav-link {
+    color: var(--accent)
+}
+
+nav {
+    background-color: var(--secondary);
+}
+
+nav img {width: 2em;} 
+
+.nav-link:hover {color: var(--accent-focus)}
+
+a {color: var(--accent)}
+a:hover {color: var(--accent-focus)}
+
+#intro {
+    background-color: var(--primary);
+}
+#highlights {
+    background-color: var(--primary);
+}
+
+.social {
+    background-color: var(--secondary);
+}
+
+.social-img {
+    width: 4em;
+    margin: 1em;
 }
