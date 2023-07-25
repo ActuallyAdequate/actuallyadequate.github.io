@@ -1,0 +1,22 @@
+:root {
+    color-scheme: dark light;
+
+    --text: #050505;
+    --background: #fafafa;
+    --primary: #34413c;
+    --secondary: #e3e5e8;
+    --accent: #d22d6f;
+
+    @media screen and (prefers-color-scheme: dark) {
+        --text: #e8e3e5;
+        --background: #191416;
+        --primary: #34413c;
+        --secondary: #22252a;
+        --accent: #e481a9;
+    }
+}
+
+body {
+    background-color: var(--background);
+    color: var(--text);
+}
